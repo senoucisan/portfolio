@@ -7,6 +7,8 @@ const sectBtn = document.querySelectorAll('.control');
 //body
 const allSections = document.querySelector('.main-content');
 
+//test---------------------- 
+const a = 1;
 
 function PageTransition(){
     //button click active class 
