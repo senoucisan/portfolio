@@ -19,7 +19,7 @@
     --color-grey-6:#12181b;
     --br-sm-2:14px;
     --box-shadow-1: 0 3px 15px rgba(0,0,0,.3); 
-    --transition : transition: all .4s ease-in-out;
+    --transition :  all .4s ease-in-out;
 }
 
 body{
@@ -163,7 +163,7 @@ section{
             position: absolute;
             left: 0;
             top :0;
-            z-index: 1;
+            z-index:-1;
             clip-path: polygon(0 0, 46% 0, 79% 100%, 0 100%);
         }
         .image{
@@ -173,6 +173,7 @@ section{
             margin-left: 4rem;
             background-color: var(--color-black);
             transition: var(--transition);
+            
             img{
                 width: 100%;
                 height: 100%;
@@ -207,3 +208,50 @@ section{
 
 
 /* independent components*/
+.btn-con{
+    display: flex;
+    align-self: flex-start;
+}
+.main-btn{
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border:1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    .btn-text{
+        padding: 0 2rem ;
+    }
+    
+    .btn-icon{
+        background-color: var(--color-secondary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        padding: 1rem;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translateX(+100%);//+100% to go away from the button
+        //transition: var(--transition);
+        z-index: -1;
+    }
+    &:hover{
+        &::before{
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-secondary);
+            transform: translateX(0);//bringing it back when we are hovering 
+            transition: var(--transition);
+        }
+    }
+}
