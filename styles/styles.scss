@@ -552,7 +552,15 @@ section{
     }
 }
 
+//contact section
+.contact-content-container{
+    display: flex;
+    padding-top: 3.5rem;
 
+    .left-contact{
+        flex: 2;
+    }
+}
 
 
 /* independent components*/
